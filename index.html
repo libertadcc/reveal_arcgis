@@ -25,13 +25,132 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-						<h1>Presentaciones</h1>
-
-						<ul>
-							<li><a href="readme.html">Readme</a></li>
-							<li>...</li>
-						</ul>
-					
+					<!-- <h2>La nueva versión de la API de Javascript de ArcGis en menos de 15'</h2> -->
+					<h2>Las principales novedades de la nueva versión de la API de Javascript de ArcGis en menos de 15'</h2>
+					<div>
+						<img src="./css/images/arcgis-js.png" height="200" width="200" />
+					</div>
+					<span>Libertad Chapinal</span>
+				</section>
+				<section>
+					<h3>¿Qué es la API ArcGis?</h3>
+				</section>
+				<section>
+					<h4><u>Diferencias entre la v3.x y v4.x</u></h4>
+					<p class="fragment">📅 Mayo 2016 → v4.0</p>
+					<p class="fragment">📅 Julio 2020 → v4.16</p>
+					<p class="fragment">⬆ v3.4</p>
+				</section>
+				<section>
+					<h4><u>Diferencias entre la v3.x y v4.x</u></h4>
+					<ul>
+						<li class="fragment">
+							<h5>Mapas en 3D</h5>
+							<p>La versión 4 nos permite hacer mapas en 3D pudiendo crear aplicaciones más atractivas y fáciles</p>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h4><u>Diferencias entre la v3.x y v4.x</u></h4>
+					<ul>
+						<li class="fragment">
+								<h5>Vistas / Web Scene</h5>
+								<p>Se ha mejorado la lógica de los mapas y las vistas. En la version 3.x la lógica del dibujo eran manejados por las vistas y las capas pero ahora esa lógica se reserva para las <b>vistas</b>.</p>
+						</li>
+					</ul>	
+				</section>
+			<section>
+				<img src="./css/images/2Dv3.png" height="300" width="400" />
+				<img src="./css/images/2Dv4.png" height="300" width="400" />
+			</section>
+			<section>
+				<img src="./css/images/2Dv4.png" height="300" width="400" />
+				<img src="./css/images/3Dv4.png" height="400" width="400" />
+			</section>
+			<section>
+				<img src="./css/images/2Dvs3D.png"/>
+				<a href="https://github.com/libertadcc/hello_world_arcgis/blob/master/index2Dvs3D.html" target="_blank">🐙🐱</a>
+			</section>
+	<section>
+		<h4><u>Diferencias entre la v3.x y v4.x</u></h4>
+		<ul>
+			<li class="fragment">
+				<h5>Renderers: </h5>
+				<p>Contiene la información que utilizaremos para pintar las capas</p>
+			</li>
+		</ul>
+	</section>
+	<section>
+		<p><b>· SimpleRenderer:</b> Para dar localizaciones.</p>
+		<img src="./css/images/SimpleRenderer.png" height="auto" width="auto" />
+		<a href="https://github.com/libertadcc/hello_world_arcgis/blob/master/indexSimpleRenderer.html" target="_blank">🐙🐱</a>
+	</section>
+	<section>
+		<p><b>· SimpleRenderer:</b></p>
+		<img src="./css/images/CodeSimpleRenderer.png" height="auto" width="auto" />
+		<div><a href="https://github.com/libertadcc/hello_world_arcgis/blob/master/indexSimpleRenderer.html" target="_blank">🐙🐱</a></div>
+	</section>	
+	<section>
+		<p><b>· UniqueValueRenderer:</b> Para mostrar tipos.</p>
+		<img src="./css/images/UniqueValueRenderer.png" height="440px" width="auto" />
+		<div><a href="https://github.com/libertadcc/hello_world_arcgis/blob/master/indexUniqueRender.html" target="_blank">🐙🐱</a></div>
+	</section>
+	<section>
+		<p><b>· UniqueValueRenderer:</b></p>
+		<img src="./css/images/CodeUniqueValueRenderer.png" height="500px" width="auto" />
+		<div><a href="https://github.com/libertadcc/hello_world_arcgis/blob/master/indexUniqueRender.html" target="_blank">🐙🐱</a></div>
+	</section>
+	<section>
+		<p><b>· ClassBreaksRenderer:</b> Para mostrar rangos.</p>
+		<img src="./css/images/ClassBreakRenderer.png" height="460px" width="auto" />
+		<div><a href="https://github.com/libertadcc/hello_world_arcgis/blob/master/indexClassBreakRenderer.html" target="_blank">🐙🐱</a></div>
+	</section>
+	<section>
+		<p><b>· ClassBreaksRenderer:</b></p>
+		<img src="./css/images/CodeClassBreakRenderer.png" height="500px" width="auto" />
+		<div><a href="https://github.com/libertadcc/hello_world_arcgis/blob/master/indexClassBreakRenderer.html" target="_blank">🐙🐱</a></div>
+	</section>
+				<section>
+					<h4><u>Diferencias entre la v3.x y v4.x</u></h4>
+					<ul>
+						<li>
+							<h5>Propiedades: </h5>
+							<div class="fragment">
+								<p>Version 3.x</p>
+								<pre><code>myFeatureLayer.setDefinitionExpression(expression);</code></pre>
+								<p>Version 4.x</p> 
+								<pre><code>var basemapTitle = map.get("basemap.title");</code></pre>
+							</div>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h4><u>Diferencias entre la v3.x y v4.x</u></h4>
+					<ul>
+						<li>
+							<h5>Watchers: </h5>
+							<p class="fragment">Además de tener <b>eventos</b> ahora también tenemos <b>watchers</b>, es decir, ya no tenemos que establecer todos los eventos sino que podemos simplificarlo con un watcher</p>
+						</li>
+					</ul>
+				</section>
+				<section>
+<pre><code>
+var map = new Map({
+	basemap: 'streets'
+});
+						
+var handle = map.watch('basemap.title', 
+ function(newValue, oldValue, property, object) {
+ console.log(
+ 	"New value: ", newValue, 
+ 	"Old value: ", oldValue,
+ 	"Watched property: ", property,  
+ 	"Watched object: ", object);
+ });
+</code></pre>
+				</section>
+				<section>
+					<h5>Muchas gracias por vuestro tiempo</h5>
 				</section>
 			</div>
 		</div>
